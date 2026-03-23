@@ -1,0 +1,36 @@
+import random
+
+def hoki():
+
+    angka_misterius = random.randint(1, 100)
+
+    angka_misterius2 = random.randint(3, 30)
+
+    angka_misterius3 = random.randint(100, 400)
+
+    file = angka_misterius, angka_misterius2, angka_misterius3
+
+    return file
+
+print(hoki())
+
+print("Ini adalah angka penentu: 54, 20, 300")
+
+def file():
+
+    file = 54, 20, 300
+
+    penting = hoki()
+
+    if penting == file:
+
+        print("Selamat anda memenangkan lotere pertama anda senilai {$540.000.000} selamat di nikmati! ")
+
+    else:
+
+        print("Maaf anda kurang beruntung! ")
+
+
+    return penting
+
+file()

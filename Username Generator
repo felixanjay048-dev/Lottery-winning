@@ -1,0 +1,23 @@
+import random
+
+name = ["Michael", "Trevor", "Franklin"]
+
+print("Ini adalah nama yang terdaftar: ", name)
+
+name2 = ["DeSanta", "Yangton", "Josiah", "LocodeLoca"]
+
+print("Ini adalah nama kedua: ", name2)
+
+def generator():
+
+    file = random.choice(name)
+
+    file2 = random.choice(name2)
+
+    file3 = random.randint(1, 100)
+
+    file4 = file + file2 + str(file3)
+
+    return file4
+
+print(f"Ini adalah nama pengguna nya: {generator()}")

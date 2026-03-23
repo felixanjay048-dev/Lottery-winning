@@ -1,0 +1,38 @@
+def currency():
+
+    print("Indonesian Rupiah to Currency! ")
+
+    usd = 17000
+
+    euro = 20000
+
+    dirham = 50000
+
+    choice = input("Which currency do you want to know the currency (USD / Euro / Dirham): ")
+
+    if choice.lower() == "usd":
+
+        number = float(input("Give me the nominal number currency in USD: "))
+
+        print("This is the total: ", (number * usd))
+
+    elif choice.lower() == "euro":
+
+        number = float(input("Give me the nominal number currency in Euro: "))
+                       
+        print("This is the total: ", (number * euro))
+
+    elif choice.lower() == "dirham": 
+
+        number = float(input("Give me the nominal number currency in Dirham: "))
+
+        print("This is the total: ", (number * dirham))
+
+    else:
+
+        print("This is the an error, please make sure, you're choose based on those 3 currency are in the list! ")
+
+
+    return euro and usd and dirham
+
+currency()

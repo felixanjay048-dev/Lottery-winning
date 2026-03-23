@@ -1,0 +1,29 @@
+nama_stock = input("Berikan nama stock anda: ")
+
+jumlah_stock = int(input("Berikan jumlah stock anda: ")
+
+gabungan = {nama_stock : jumlah_stock}
+
+def tambah_stock():
+
+  while True:
+
+    tanya = input("Apakah ada yang di tambah kan lagi? (Ya / Tidak): ")
+
+    if tanya.lower() == "ada":
+
+        nama = input("Berikan nama stock anda: ")
+
+        jumlah = int(input("Berikan jumlah stock anda: ")
+
+        gabungan.update({nama : jumlah})
+
+    else:
+
+      print("Jika tidak ada sekian terima kasih! ")
+
+      break
+
+tambah_stock()
+
+print(gabungan)

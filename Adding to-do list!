@@ -1,0 +1,14 @@
+to_do = []
+def tambah_tugas():
+    kegiatan = input("Give me your to do list: ")
+    to_do.append(kegiatan)
+    print(to_do)
+    while True:
+            asking = input("Do you need to add another one? (Yes / NO): ")
+            if asking.lower() == "yes":
+                bertanya = input("What list do you need to add? ")
+                to_do.append(bertanya)
+                print(f"Here you go: {to_do}")
+            else:
+                print("if don't thanks for telling us! ")
+tambah_tugas()

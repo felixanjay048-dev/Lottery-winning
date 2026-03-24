@@ -1,0 +1,5 @@
+Hello this is Felix, i'm 19 years old! 
+
+I would like to share this project, for myself in the future! I made this will be prooved of my project worked, that i made! 
+
+I made this thing, i can be a conglomerate, and financial freedom in 40 years old! 

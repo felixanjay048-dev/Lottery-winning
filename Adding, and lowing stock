@@ -42,9 +42,13 @@ def kurang_stock():
 
                 print("Nama barang tidak ada di dalam list! ")
 
+                break
+
         else:
 
             print("Jika tidak ada, sekian terima kasih! ")
+
+            break
 
 tambah_barang()
 

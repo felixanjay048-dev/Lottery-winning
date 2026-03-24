@@ -1,0 +1,112 @@
+user = {}
+
+def register():
+
+    username = input("Berikan username anda: ")
+
+    if username in user:
+
+        print("Terjadi error, karena username sudah ada di dalam sistem, silahkan ganti username! ")
+
+    else:
+
+        password = input("Berikan password: ")
+
+        user[username] = password
+
+        user.update({username : password})
+
+        print("Registrasi berhasil! ")
+
+        return username and user
+    
+def login():
+
+    username = input("Berikan nama username anda, yang sudah diregistrasikan: ")    
+
+    password = input("Berikan Password, yang sudah diregistrasikan: ")
+
+    if username and user[username] == password:
+
+        print(f"Selamat Login berhasil! Selamat datang: {username}")
+
+
+    else:
+
+        print("Password, atau Username error, silahkan cobalagi! ")
+
+    return username and password
+
+print("Menu: 1. Registrasi, 2. Login, 3. Keluar")
+
+while True:
+
+    choice = int(input("Pilih salah satu menu: "))
+
+    if choice == 1:
+
+        register()
+
+    elif choice == 2:
+
+        login()
+
+    else:
+
+        break
+
+list = {}
+
+def tambah_barang():
+
+    while True:
+
+        tanya = input("Tambah barang? (Ya / Tidak): ")
+
+        if tanya.lower() == "ya" or tanya.lower() == "iya":
+
+            nama_barang = input("Berikan nama barang: ")
+
+            jumlah_barang = int(input("Berikan jumlah barang: "))
+
+            list.update({nama_barang : jumlah_barang})
+
+            print(list)
+
+        else:
+
+            print("Jika tidak ada, sekian terima kasih! ")
+
+            break
+
+def kurang_stock():
+
+    while True:
+
+        tambah = input("Apakah ada barang yang berkurang? Ya / Tidak: ")
+
+        if tambah.lower() == "ya":
+
+            tambah_barang = input("Berikan nama barang: ")
+
+            if tambah_barang in list:
+
+                jumlah_barang = int(input("Berikan jumlah barang: "))
+
+                print(f"Stock {tambah_barang}, jumlah barang tersisa {jumlah_barang}")
+
+            else:
+
+                print("Nama barang tidak ada di dalam list! ")
+
+                break
+
+        else:
+
+            print("Jika tidak ada, sekian terima kasih! ")
+
+            break
+
+tambah_barang()
+
+kurang_stock()

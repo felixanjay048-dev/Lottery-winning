@@ -1,0 +1,25 @@
+choice = input("Choose one Celcius to Fahrenheit or Fahrenheit to Celcius: ")
+
+def celcius_to_fahrenheit():
+
+    celcius = int(input("Give me the degree in celcius: "))
+
+    return (9/5 * celcius) + 32
+
+def fahrenheit_to_celcius():
+
+    fahrenheit = int(input("Give me the degreen in fahrenheit: "))
+
+    return (fahrenheit - 32) * 5 / 9
+
+if choice.lower() == "celcius to fahrenheit":
+
+    print("This is the result: ", celcius_to_fahrenheit(), "°F")
+
+elif choice.lower() == "fahrenheit to celcius":
+
+    print("This is the result: ", fahrenheit_to_celcius(), "°C")
+
+else:
+
+    print("Terjadi error, silahkan coba lagi, perintah tidak ada di dalam list! ")

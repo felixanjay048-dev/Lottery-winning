@@ -1,0 +1,51 @@
+list = {}
+
+def tambah_barang():
+
+    while True:
+
+        tanya = input("Tambah barang? (Ya / Tidak): ")
+
+        if tanya.lower() == "ya" or tanya.lower() == "iya":
+
+            nama_barang = input("Berikan nama barang: ")
+
+            jumlah_barang = int(input("Berikan jumlah barang: "))
+
+            list.update({nama_barang : jumlah_barang})
+
+            print(list)
+
+        else:
+
+            print("Jika tidak ada, sekian terima kasih! ")
+
+            break
+
+def kurang_stock():
+
+    while True:
+
+        tambah = input("Apakah ada barang yang berkurang? Ya / Tidak: ")
+
+        if tambah.lower() == "ya":
+
+            tambah_barang = input("Berikan nama barang: ")
+
+            if tambah_barang in list:
+
+                jumlah_barang = int(input("Berikan jumlah barang: "))
+
+                print(f"Stock {tambah_barang}, jumlah barang tersisa {jumlah_barang}")
+
+            else:
+
+                print("Nama barang tidak ada di dalam list! ")
+
+        else:
+
+            print("Jika tidak ada, sekian terima kasih! ")
+
+tambah_barang()
+
+kurang_stock()

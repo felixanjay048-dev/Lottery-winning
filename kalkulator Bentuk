@@ -1,0 +1,45 @@
+choice = input("Pilih salah satu, hitung: Persegi / Lingkaran / Persegi Panjang ")
+
+def persegi():
+
+    sisi = int(input("Berikan Sisi Persegi: "))
+
+    return 4 * sisi
+
+def lingkaran():
+
+    jari_jari = int(input("Berikan jari-jari lingkaran: "))
+
+    if jari_jari % 1 == 7:
+
+        return jari_jari * 22 / 7 ** 2
+    
+    else:
+
+        return jari_jari * 3.14 ** 2
+    
+    return jari_jari
+
+def persegi_panjang():
+
+    panjang = int(input("Berikan panjang: "))
+
+    lebar = int(input("Berikan lebar: "))
+
+    return panjang * lebar
+
+if choice.lower() == "persegi":
+
+    print("Ini adalah hasil: ", persegi(), "Sisi")
+
+elif choice.lower() == "persegi panjang":
+
+    print("Ini adalah hasil: ", persegi_panjang(), "Lebar")
+
+elif choice.lower() == "lingkaran":
+
+    print("Ini adalah hasil: ", lingkaran(), "Radius")
+
+else:
+
+    print("Tidak ada di dalam list! ")

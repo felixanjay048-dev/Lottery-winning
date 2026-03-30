@@ -1,0 +1,28 @@
+from tkinter import Tk, Label, Entry, messagebox
+
+akar = Tk()
+
+akar.geometry("1280x960")
+
+label = Label(text="Register", font=("Times New Roman ", 20))
+
+label.place(x=600, y=50)
+
+label2 = Label(akar, label, text="Your Username", font=("Times New Roman", 20))
+
+label2.place(x=560, y=150)
+
+entry = Entry(akar)
+
+entry.place(x=590, y=200)
+
+label3 = Label(akar, text="Your Password", font=("Times New Roman", 20))
+
+label3.place(x=563, y=250)
+
+entry2 = Entry(akar)
+
+entry2.place(x= 590, y=300)
+
+
+akar.mainloop()

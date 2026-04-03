@@ -1,0 +1,34 @@
+while True:
+    # Tanyakan dulu apakah ingin mulai/lanjut
+    tanya = input("\nApakah ingin menghitung luas bangun datar? (ya/tidak): ").lower()
+
+    if tanya == "ya":
+        print("-" * 30)
+        pilihan = input("Pilih salah satu (Persegi, Lingkaran, atau Persegi Panjang): ").lower()
+
+        if pilihan == "persegi":
+            sisi = float(input("Masukkan panjang sisi: "))
+            # Luas persegi adalah sisi * sisi (atau sisi pangkat 2)
+            print(f"Hasil luas Persegi: {sisi * sisi}")
+
+        elif pilihan == "persegi panjang":
+            panjang = float(input("Masukkan panjang: "))
+            lebar = float(input("Masukkan lebar: "))
+            print(f"Hasil luas Persegi Panjang: {panjang * lebar}")
+
+        elif pilihan == "lingkaran":
+            jari_jari = float(input("Masukkan jari-jari lingkaran: "))
+            if jari_jari % 7 == 0:
+                hasil = 22 / 7 * jari_jari ** 2
+            else:
+                hasil = 3.14 * jari_jari ** 2
+            print(f"Hasil luas Lingkaran: {hasil}")
+        
+        else:
+            print("Pilihan tidak dikenal. Silakan coba lagi.")
+            
+    elif tanya == "tidak":
+        print("Sekian, terima kasih!")
+        break
+    else:
+        print("Masukkan 'ya' atau 'tidak' saja.")

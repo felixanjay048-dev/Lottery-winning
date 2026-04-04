@@ -1,0 +1,25 @@
+choice = input("Comment tu t'apple? ")
+
+print(f"Je suis {choice}! ")
+
+def sapa():
+
+    print(f"Salut, Ca'va? {choice}")
+
+sapa()
+
+def kabar():
+
+    kabar = input("C'est comment tu situation? ")
+
+    print(f"Je suis {kabar}")
+
+    if kabar.lower() == "mal":
+
+        question = input("Ce qui s'est passe: ")
+
+        print(f"Parce que je suis {question}")
+
+    return kabar
+
+kabar()

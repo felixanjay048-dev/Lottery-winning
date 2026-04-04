@@ -1,0 +1,41 @@
+dictionaire = {}
+
+print(dictionaire)
+
+def updating():
+
+    d_ajouter = input("Tu dois d'ajouter un nouveau moi: ")
+
+    signifie = input("Donnez-moi la signifie ce mots en indonesie: ")
+
+    dictionaire.update({d_ajouter : signifie})
+
+    print(dictionaire)
+
+    return d_ajouter and signifie
+
+updating()
+
+def upgrade():
+
+    autre = input("Il y a tu veux d'ajouter nouveau mots? oui / non: ")
+
+    while True:
+
+        if autre.lower() == "oui" or autre.lower() == "ouais":
+
+            question = input("De quoi un nouveau mots, tu veux ajouter? ")
+
+            signifie = input("Donnez moi d'autre signifie mots, de tu donnes: ")
+
+            dictionaire.update({question : signifie})
+
+            print(dictionaire)
+
+        else:
+
+            print("Si tu ne pas ajouter un nouveau mot merci beaucoup! ")
+
+        return autre and signifie
+    
+upgrade()

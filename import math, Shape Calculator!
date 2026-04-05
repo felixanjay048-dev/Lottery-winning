@@ -1,0 +1,39 @@
+import math
+
+choice = input("Pilih salah satu Persegi, Lingkaran, atau Persegi Panjang: ")
+
+def persegi():
+
+    sisi = int(input("Berikan angka yang anda ingin tambah kan: "))
+
+    return math.pow(sisi, 4)
+
+def lingkaran():
+
+    radius = float(input("Berikan salah satu angka yang anda ingin tambah kan: "))
+
+    return math.pow(radius, 2) * math.pi
+
+def persegi_panjang():
+
+    panjang = int(input("Berikan salah satu angka yang anda ingin tambah kan: "))
+
+    lebar = int(input("Berikan salah satu angka yang anda ingin tambah kan: "))
+
+    return panjang * lebar
+
+if choice.lower() == "persegi":
+
+    print("Ini adalah hasil nya: ", persegi())
+
+elif choice.lower() == "persegi panjang":
+
+    print("Ini adalah hasil nya: ", persegi_panjang())
+
+elif choice.lower() == "lingkaran":
+
+    print("Ini adalah hasiln nya: ", round(lingkaran()))
+
+else:
+
+    print("Terjadi Error, silahkan coba lagi! ")

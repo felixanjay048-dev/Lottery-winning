@@ -1,6 +1,8 @@
 import math
 
-def tabung():
+choice = input("Pilih salah satu Keliling, atau Luas: ")
+
+def tabung_luas():
 
     radius = float(input("Berikan salah satu angka untuk radius: "))
 
@@ -10,4 +12,22 @@ def tabung():
 
     return volume
 
-print("Ini adalah hasil nya: ", round(tabung()), "m**3")
+def tabung_keliling():
+
+    radius = float(input("Berikan salah saut angka untuk radius: "))
+
+    volume = 2 * math.pi * math.pow(radius, 2)
+
+    return volume
+
+if choice.lower() == "keliling":
+
+    print("Ini adalah hasilnya: ", round(tabung_keliling()), "m**3")
+
+elif choice.lower() == "luas":
+
+    print("Ini adalah hasilnya: ", round(tabung_luas()), "m**3")
+
+else:
+
+    print("Terjadi error, silahkan coba lagi! ")

@@ -1,0 +1,13 @@
+import math
+
+def tabung():
+
+    radius = float(input("Berikan salah satu angka untuk radius: "))
+
+    tinggi = float(input("Berikan salah satu angka untuk tinggi: "))
+
+    volume = math.pi * math.pow(radius, 2) * tinggi
+
+    return volume
+
+print("Ini adalah hasil nya: ", round(tabung()), "m**3")

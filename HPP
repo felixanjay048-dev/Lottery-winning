@@ -1,0 +1,17 @@
+
+nama_produk = input("Nama Produk: ")
+jumlah_produksi = int(input("Jumlah Produksi (Unit): "))
+biaya_bahan = int(input("Total Biaya Bahan Baku: "))
+biaya_kemasan = int(input("Total Biaya Kemasan: "))
+biaya_listrik = int(input("Total Biaya Listrik: "))
+
+# Perhitungan
+# HPP adalah total semua biaya dibagi jumlah barang yang dihasilkan
+total_biaya = biaya_bahan + biaya_kemasan + biaya_listrik
+hpp_per_unit = total_biaya / jumlah_produksi
+
+# Output
+print("-" * 30)
+print(f"Produk: {nama_produk}")
+print(f"Total Biaya Produksi: Rp{total_biaya}")
+print(f"HPP per Unit: Rp{hpp_per_unit}")

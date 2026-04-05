@@ -1,0 +1,12 @@
+import math
+
+def bandingkan_gempa(m1, m2):
+    # Rumus: 10^(M1 - M2)
+    perbandingan = math.pow(10, m1 - m2)
+    return perbandingan
+
+magnitudo_a = 7.0
+magnitudo_b = 5.0
+
+selisih = bandingkan_gempa(magnitudo_a, magnitudo_b)
+print(f"Gempa {magnitudo_a} SR itu {selisih:.0f}x lebih kuat dari gempa {magnitudo_b} SR.")

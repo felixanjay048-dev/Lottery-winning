@@ -1,0 +1,87 @@
+import math
+
+choice = input("Pilih salah satu simbol ( * / - / + / (/) / ** / % / (//): ")
+
+def matematika_kurang():
+
+    x = int(input("Berikan angka awal: "))
+
+    x2 = int(input("Berikan angka pangkat: "))
+
+    angka_terakhir = int(input("Berikan angka terakhir: "))
+
+    return math.pow(x, x2) - angka_terakhir / math.pow(x, x2) - angka_terakhir
+
+def matematika_tambah():
+
+    x = int(input("Berikan angka awal: "))
+
+    x2 = int(input("Berikan angka pangkat: "))
+
+    angka_terakhir = int(input("Berikan angka terakhir: "))
+
+    return math.pow(x, x2) + angka_terakhir / math.pow(x, x2) + angka_terakhir
+
+def matematika_pangkat():
+
+    x = int(input("Berikan angka awal: "))
+
+    x2 = int(input("Berikan angka pangkat: "))
+
+    return math.pow(x, x2) / math.pow(x, x2)
+
+def matematika_modulus():
+
+    x = int(input("Berikan angka awal: "))
+
+    x2 = (input("Berikan angka pangkat: "))
+
+    angka_terakhir = int(input("Berikan angka terakhir: "))
+
+    return math.pow(x, x2) % angka_terakhir / math.pow(x, x2) % angka_terakhir
+
+def matematika_div():
+
+    x = float(input("Berikan angka awal: "))
+
+    x2 = float(input("Berikan angka pangkat: "))
+
+    return math.pow(x, x2) // math.pow(x, x2)
+
+def matematika_kali():
+
+    x = int(input("Berikan angka awal: "))
+
+    x2 = int(input("Berikan angka pangkat: "))
+
+    angka_terakhir = int(input("Berikan angka terakhir: "))
+
+    return math.pow(x, x2) * angka_terakhir / math.pow(x, x2) * angka_terakhir
+
+if choice == "**":
+
+    print("Ini adalah hasilnya: ", matematika_pangkat())
+
+elif choice == "+":
+
+    print("Ini adalah hasilnya: ", matematika_tambah())
+
+elif choice == "-":
+
+    print("Ini adalah hasilnya: ", matematika_kurang())
+
+elif choice == "*":
+
+    print("Ini adalah hasilnya: ", matematika_kali())
+
+elif choice == "%":
+
+    print("Ini adalah hasilnya: ", matematika_modulus())
+
+elif choice == "//":
+
+    print("Ini adalah hasilnya: ", matematika_div())
+
+else:
+
+    print("Terjadi error, silahkan coba lagi! ")

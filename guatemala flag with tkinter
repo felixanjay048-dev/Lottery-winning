@@ -1,0 +1,15 @@
+from tkinter import Tk, Canvas
+
+windows = Tk()
+
+windows.geometry("400x400")
+
+canva = Canvas(windows, width=400, height=400)
+
+canva.create_rectangle(280, 2000, 400, -2000, fill="cyan", outline="cyan")
+
+canva.create_rectangle(0, 0, 120, 400, fill="cyan", outline="cyan")
+
+canva.pack()
+
+windows.mainloop()

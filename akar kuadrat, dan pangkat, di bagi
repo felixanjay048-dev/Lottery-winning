@@ -1,0 +1,19 @@
+import math
+
+def hitung():
+
+    hasil = math.sqrt(math.pow(a, 2)) + math.sqrt(math.pow(b, 2)) / math.sqrt(math.pow(c, 2)) + math.sqrt(math.pow(d, 2))
+
+    return hasil
+
+a = int(input("Berikan salah satu angka yang anda ingin tambahkan: "))
+
+b = int(input("Berikan salah satu angka yang anda ingin tambahkan: "))
+
+c = int(input("Berikan salah satu angka yang anda ingin tambahkan: "))
+
+d = int(input("Berikan salah atu angka yang anda ingin tambahkan: "))
+
+hasil = hitung()
+
+print("Ini adalah hasilnya: ", round(hasil))

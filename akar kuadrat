@@ -1,0 +1,19 @@
+import math
+
+def akar_kuadrat():
+
+    x = math.sqrt((x1 + x2)) / math.sqrt((y2 - y1))
+
+    return x
+
+x1 = int(input("Berikan salah satu angka yang anda ingin tambah kan: "))
+
+x2 = int(input("Berikan salah satu angka yang anda ingin tambah kan: "))
+
+y1 = int(input("Berikan salah satu angka yang anda ingin tambah kan: "))
+
+y2 = int(input("Berikan salah satu angka yang anda ingin tambah kan: "))
+
+hasil = akar_kuadrat()
+
+print("Ini adala hasilnya: ", round(hasil))

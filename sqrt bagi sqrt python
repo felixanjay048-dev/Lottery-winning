@@ -1,0 +1,13 @@
+import math
+
+def tambah():
+
+    choice = int(input("Berikan salah satu angka yang anda ingin tambahkan: "))
+
+    bagi = int(input("Berikan salah satu angka yang anda ingin tambahkan: "))
+
+    file = math.sqrt(choice) / math.sqrt(bagi)
+
+    return file
+
+print(f"Ini adalah hasilnya: {round(tambah())}")

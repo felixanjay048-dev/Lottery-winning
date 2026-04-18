@@ -1,0 +1,79 @@
+import math
+
+choice = int(input("Pilih salah satu angka 1. Hukum Newton, 2. Energi kinetik, 3. Usaha Energi: "))
+
+def hukum_newton():
+
+    massa = int(input("Berikan angka massa: "))
+
+    percepatan = int(input("Berikan angka kecepatan: "))
+
+    return massa * percepatan
+
+def gerak_lurus():
+
+    massa = int(input("Berikan angka massa: "))
+
+    kecepatan_benda = int(input("Berikan angka kecepatan benda: "))
+
+    file = 1 / 2 * massa * math.pow(kecepatan_benda, 2)
+
+    return file
+
+def usaha_energi():
+
+    gaya = int(input("Berikan massa gaya: "))
+
+    perpindahan = int(input("Berikan angka perpindahan: "))
+
+    choice = int(input("Berikan Angka sudut cos: 0, 30, 45, 60, 90: "))
+
+    if choice == int(0):
+
+        file = gaya * perpindahan * 0
+
+        return file
+    
+    elif choice == int(30):
+
+        file = 1 / 2 * gaya * perpindahan
+
+        return file
+    
+    elif choice == int(45):
+
+        file = 1 / 2 * math.sqrt(2) * gaya * perpindahan
+
+        return file
+    
+    elif choice == int(60):
+
+        file = 1 / 2 * math.sqrt(3) * gaya * perpindahan
+
+        return file
+    
+    elif choice == int(90):
+
+        file = 1 * gaya * perpindahan
+
+        return file
+    
+    else:
+
+        print("Terjadi errror silahkan cobalagi! ")
+
+if choice == int(1):
+
+    print(f"Ini adalah hasilnya: {hukum_newton()} Joule")
+
+elif choice == int(2):
+
+    print(f"Ini adalah hasilnya: {gerak_lurus()} Newton")
+
+elif choice == int(3):
+
+    print(f"Ini adalah hasilnya: {usaha_energi()} Joule")
+
+else:
+
+    print("Terjadi error silahkan cobalagi! ")

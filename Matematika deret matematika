@@ -1,0 +1,14 @@
+angka_awal = int(input("Berikan angka awal: "))
+
+u2 = int(input("Berikan angka rasio kedua: "))
+
+u1 = int(input("Berikan angka rasio pertama: "))
+
+def hasil():
+
+    file = angka_awal // 1 - u1 / u2
+
+    return file
+
+print("Ini adalah hasilnya: ", round(hasil()))
+    

@@ -1,0 +1,41 @@
+import tkinter as tk
+
+from tkinter import Canvas
+
+windows = tk.Tk()
+
+windows.geometry('300x300')
+
+canva = Canvas(windows, height=300, width=300)
+
+canva.create_rectangle(0, 0, 1000, 50, fill="red", outline="red")
+
+canva.create_rectangle(0, 50, 1000, 100, fill="white", outline="white")
+
+canva.create_rectangle(0, 100, 1000, 150, fill="red", outline="red")
+
+canva.create_rectangle(0, 150, 1000, 200,  fill="white", outline="white")
+
+canva.create_rectangle(0, 200, 1000, 250, fill="red", outline="red")
+
+canva.create_polygon(0, 15, 130, 125, 0, 235, fill="Blue", outline="blue")
+
+bintang_coords = [
+    40, 105,  # Titik atas
+    48, 120,  # Lekukan kanan atas
+    65, 122,  # Ujung kanan
+    52, 132,  # Lekukan kanan bawah
+    58, 148,  # Ujung bawah kanan
+    40, 138,  # Lekukan bawah (tengah)
+    22, 148,  # Ujung bawah kiri
+    28, 132,  # Lekukan kiri bawah
+    15, 122,  # Ujung kiri
+    32, 120   # Lekukan kiri atas
+
+]
+
+canva.create_polygon(bintang_coords, fill="white", outline="white")
+
+canva.pack()
+
+canva.mainloop()

@@ -1,0 +1,27 @@
+import random
+
+# Tentukan target yang ingin dicapai
+target = (500, 150, 300)
+percobaan = 0
+
+while True:
+    percobaan += 1
+    
+
+    angka = random.randint(1, 1000)
+    angka2 = random.randint(1, 200)
+    angka3 = random.randint(20, 300)
+    
+    file = (angka, angka2, angka3)
+    
+
+    print(f"Percobaan ke-{percobaan}: {file}")
+  
+    if file == target:
+        print("\nSelamat anda berhasil!")
+        break
+    else:
+
+        print("Tidak berhasil, mencoba lagi...")
+
+print(f"Selesai dalam {percobaan} percobaan.")

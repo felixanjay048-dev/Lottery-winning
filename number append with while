@@ -1,0 +1,29 @@
+number = []
+
+angka = int(input("Berikan angka yang mau di tambahkan: "))
+
+number.append(angka)
+
+print(number)
+
+def tambah():
+
+    tanya = input("Apakah ada yang mau di tambahkan lagi? Ya / Tidak: ")
+
+    while True:
+
+        if tanya.lower() == "ya":
+
+            tambah = int(input("Berikan angka yang mau di tambah kang lagi: "))
+
+            number.append(tambah)
+
+            print("Ini adalah list nya: ", number)
+
+        else:
+
+            print("Jika tidak ada, sekian terima kasih!  ")
+
+            break
+
+tambah()

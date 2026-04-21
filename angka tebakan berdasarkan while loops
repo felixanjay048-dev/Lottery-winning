@@ -1,0 +1,21 @@
+import random
+
+target = random.randint(1, 10)
+
+while tebakan != target:
+
+    tebakan = int(input("Berikan angka, yang tepat: "))
+
+    if tebakan < target:
+
+        print("Angka lebih kecil, silahkan cobalagi! ")
+
+    elif tebakan > target:
+
+        print("Angka lebih besar, silahkan cobalagi! ")
+
+    else:
+
+        print("Anda berhasil menebak angka! Selamat anda berhasil! ")
+
+        break

@@ -1,0 +1,31 @@
+import random
+
+list = []
+
+username = input("Berikan nama, yang ingin di tambahkan: ")
+
+list.append(username)
+
+print(list)
+
+while True:
+
+    tanya = input("Apakah ada nama yang ingin anda tambahkan: Ya / Tidak: ")
+
+    if tanya.lower() == "ya":
+
+        tanya = input("Sebutkan nama yang lain: ")
+
+        list.append(tanya)
+
+        print(list)
+
+    else:
+
+        print("Jika tidak ada sekian terima kasih! ")
+
+        break
+
+file = random.choice(list)
+
+print(f"Selamat nama anda terpilih {file}!")

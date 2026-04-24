@@ -1,0 +1,36 @@
+import random
+
+option = ["Scissors", "Rock", "Paper"]
+
+file = random.choice(option)
+
+file2 = random.choice(option)
+
+acak = (file, file2) 
+
+print(f"Hasil acak: {acak}")
+
+if acak == ("Scissors", "Rock"):
+
+    print("Rock win!")
+
+elif acak == ("Rock", "Scissors"):
+
+    print("Rock win!")
+
+elif acak == ("Scissors", "Scissors") or acak == ("Rock", "Rock") or acak == ("Paper", "Paper"):
+
+    print("Both are equal!")
+
+elif acak == ("Rock", "Paper") or acak == ("Paper", "Rock"):
+
+    print("Paper win!")
+
+
+elif acak == ("Scissors", "Paper") or acak == ("Paper", "Scissors"):
+
+    print("Scissors win!")
+
+else:
+
+    print("None!")

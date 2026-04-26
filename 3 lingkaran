@@ -1,0 +1,22 @@
+import tkinter as tk
+from tkinter import Canvas
+
+
+windows = tk.Tk()
+
+windows.title("Tiga Lingkaran Digeser ke Bawah")
+
+windows.geometry("450x400")
+
+
+canva = Canvas(windows, width=450, height=400, bg="white")
+
+canva.pack()
+
+canva.create_oval(20, 150, 140, 270, fill="cyan", outline="cyan")
+
+canva.create_oval(160, 150, 280, 270, fill="cyan", outline="cyan")
+
+canva.create_oval(300, 150, 420, 270, fill="cyan", outline="cyan")
+
+windows.mainloop()

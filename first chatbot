@@ -1,0 +1,53 @@
+def chatbot_say_hello():
+
+    print("Hello, i'm Basic bot! ")
+
+    rules = {
+
+        "How are you?": "I'm good!",
+        "Hello": "Hello, how are you doing?",
+        "I'm good": "That's good to hear!",
+        "I'm good and you?": "I'm doing very well!",
+        "I'm bad": "What happened?",
+        "I'm sad": "What happened?",
+        "I'm bad!": "What happened?",
+        "I'm sad!": "What happened?",
+        "Who are you?": "I'm Basic!, and you?",
+        "When did you released? ": "I was released in 2030! ",
+        "Who is your developer? ": "My developer is Felix Juis Kendra! ",
+        "Goodbye": "See you later"
+
+    }
+
+    while True:
+
+        sapa = input("Type in the message: ") 
+
+        if sapa in rules:
+
+            print(f"Basic: {rules[sapa]}")
+
+            if sapa.lower() == "i'm bad" or sapa == "i'm sad":
+
+                ask = input("Because: ")
+
+                print(f"Basic: Oh no, i feel bad for you! i'm so sorry for you! {ask}")
+
+
+            elif sapa.lower() == "who are you? ":
+
+                answer = input("My name is ")
+
+                print(f"Basic: Hello {answer}")
+
+            elif sapa.lower() == "goodbye":
+
+                break
+
+        else:
+
+            print("Basic: Sorry i can't understand, what are you talkking about, please try again! ")
+
+            break
+
+chatbot_say_hello()

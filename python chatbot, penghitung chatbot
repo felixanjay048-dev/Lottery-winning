@@ -1,0 +1,61 @@
+def chatbot():
+
+    print("=== Basic: Sistem penghitungan bunga ===")
+
+    perintah = input("Basic: Pilih salah satu Bunga Majemuk, atau Bunga Tunggal: ")
+
+    if perintah.lower() == "bunga majemuk":
+
+        modal = int(input("Berikan modal awal: "))
+
+        bunga = float(input("Basic: Berikan estimasi bunga: "))
+
+        tahun = int(input("Basic: Berikan estimasi waktu tertentu: "))
+
+        file = modal * (1 + bunga / 100) ** tahun
+
+        print(f'Basic: Ini adalah hasilnya [{round(file)}]')
+
+        return file
+    
+    elif perintah.lower() == "bunga tunggal":
+
+        pilih = input("Basic: Pilih salah satu perintah rumus utama, atau rumus akhir: ")
+
+        if pilih.lower() == "rumus utama":
+
+            modal = int(input("Basic: Berikan modal awal pinjam: "))
+
+            bunga = float(input("Basic: Berikan estimasi bunga: "))
+
+            tahun = int(input("Berikan dalam estimasi waktu, dalam bentuk hari: "))
+
+            file = modal * bunga / 100 * tahun / 365 
+
+            file2 = modal + file
+
+            print(f"Basic: Ini adalah hasilnya: [{round(file2)}]")
+
+            return file and file2
+        
+        elif pilih.lower() == "rumus akhir":
+
+            modal = int(input("Basic: Berikan modal awal: "))
+
+            bunga = float(input("Basic: Berikan estimasi bunga: "))
+
+            tahun = int(input("Basic: Berikan dalam estimasi waktu, dalam bentuk hari: "))
+
+            file = modal * (1 + bunga / 100 * tahun / 365)
+
+            hasil = file * modal
+
+            print(f"Basic: Ini adalah hasilnya: [{round(hasil)}]")
+
+            return file and hasil
+        
+        else:
+
+            print("Basic: Maaf saya tidak mengerti, yang anda perintahkan, silahkan cobalagi!")
+
+chatbot()

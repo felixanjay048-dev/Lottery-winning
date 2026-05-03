@@ -1,0 +1,187 @@
+def chatbot():
+
+    print("=== Basic: Sistem Penghitungan Bunga ===")
+    
+    while True:
+
+        perintah = input("\nBasic: Pilih salah satu (Bunga Majemuk / Bunga Tunggal / Keluar): ").lower()
+
+        if perintah == "keluar":
+
+            print("Basic: Terima kasih telah menggunakan chatbot ini!")
+
+            break
+            
+
+        if perintah == "bunga majemuk":
+
+            modal = int(input("Basic: Berikan modal awal: "))
+
+            bunga = float(input("Basic: Berikan estimasi bunga (%): "))
+
+            tahun = int(input("Basic: Berikan estimasi waktu (tahun): "))
+            
+            hasil = modal * (1 + bunga / 100) ** tahun
+
+            print(f'Basic: Ini adalah hasilnya: [{round(hasil)}]')
+            
+
+        elif perintah == "bunga tunggal":
+
+            pilih = input("Basic: Pilih salah satu (Rumus Utama / Rumus Akhir): ").lower()
+            
+            if pilih == "rumus utama":
+
+                modal = int(input("Basic: Berikan modal awal pinjam: "))
+
+                bunga = float(input("Basic: Berikan estimasi bunga (%): "))
+
+                tahun = int(input("Basic: Berikan estimasi waktu (dalam hari): "))
+                
+
+                bunga_didapat = modal * (bunga / 100) * (tahun / 365)
+
+                total_akhir = modal + bunga_didapat
+                
+                print(f"Basic: Bunga yang didapat: [{round(bunga_didapat)}]")
+
+                print(f"Basic: Total akhir (Modal + Bunga): [{round(total_akhir)}]")
+                
+            elif pilih == "rumus akhir":
+
+                modal = int(input("Basic: Berikan modal awal: "))
+                
+                bunga = float(input("Basic: Berikan estimasi bunga (%): "))
+
+                tahun = int(input("Basic: Berikan estimasi waktu (dalam hari): "))
+                
+                total_akhir = modal * (1 + (bunga / 100 * tahun / 365))
+
+                print(f"Basic: Ini adalah hasilnya: [{round(total_akhir)}]")
+                
+            else:
+
+                print("Basic: Maaf saya tidak mengerti rumus tersebut.")
+                
+        else:
+
+            print("Basic: Pilihan tidak valid, silakan coba lagi!")
+
+
+
+        ulang = input("Apakah ada yang mau dihitung lagi? (Ya / Tidak): ")
+
+        if ulang.lower() == "ya":
+
+            pilih = input("Basic: Pilih salah satu Bunga Majemuk, atau Bunga Tunggal: ")
+
+            if pilih.lower() == "bunga majemuk":
+
+                modal = int(input("Basic: Berikan modal awal: "))
+
+                bunga = float(input("Basic: Berikan dalam bunga estimasi: "))
+
+                tahun = int(input("Basic: Berikan dalam bentuk estimasi waktu: "))
+
+                file = modal * (1 + bunga / 100) ** tahun
+
+                print(f"Basic: Ini adalah hasilnya: {file}")
+
+            elif pilih.lower() == "bunga tunggal":
+
+                pilih = input("Basic: Pilih salah satu (Rumus Utama / Rumus Akhir): ").lower()
+            
+                if pilih == "rumus utama":
+
+                    modal = int(input("Basic: Berikan modal awal pinjam: "))
+
+                    bunga = float(input("Basic: Berikan estimasi bunga (%): "))
+
+                    tahun = int(input("Basic: Berikan estimasi waktu (dalam hari): "))
+                
+
+                    bunga_didapat = modal * (bunga / 100) * (tahun / 365)
+
+                    total_akhir = modal + bunga_didapat
+                
+                    print(f"Basic: Bunga yang didapat: [{round(bunga_didapat)}]")
+
+                
+            elif pilih == "rumus akhir":
+                
+                modal = int(input("Basic: Berikan modal awal: "))
+                
+                bunga = float(input("Basic: Berikan estimasi bunga (%): "))
+
+                tahun = int(input("Basic: Berikan estimasi waktu (dalam hari): "))
+                
+                total_akhir = modal * (1 + (bunga / 100 * tahun / 365))
+
+                print(f"Basic: Ini adalah hasilnya: [{round(total_akhir)}]")
+                
+            else:
+
+                print("Basic: Maaf saya tidak mengerti rumus tersebut.")
+                
+        else:
+
+            print("Basic: Pilihan tidak valid, silakan coba lagi!")
+          
+def money_converter():
+
+    while True:
+
+        pilih = input("\nBasic: Pilih salah satu (Euro to IDR / USD to IDR / Keluar): ").lower()
+
+        if pilih == "keluar":
+
+            print("Basic: Terima kasih! Program selesai.")
+
+            break
+
+        if pilih == "euro to idr":
+
+            convert = 20000
+
+            euro = float(input("Basic: Berikan angka nominal uang Euro: "))
+
+            file = euro * convert
+
+            print(f"Basic: Ini adalah hasilnya: [{file}]")
+            
+        elif pilih == "usd to idr":
+
+            convert = 17000
+
+            usd = float(input("Basic: Berikan angka nominal uang USD: "))
+
+            file = usd * convert
+
+            print(f"Basic: Ini adalah hasilnya: [{file}]")
+            
+        else:
+
+            print("Basic: Terjadi error, pilihan tidak valid. Silakan coba lagi!")
+
+
+        ulang = input("Basic: Apakah ada yang ingin ditambahkan lagi? Ya / Tidak: ").lower()
+
+        if ulang != "ya":
+
+            print("Basic: Sekian, terima kasih!")
+
+            break
+
+
+pilih = input("Basic: Pilih salah satu Uang Konversi, atau Penghitung Bunga: ")
+
+if pilih.lower() == "uang konversi":
+
+    money_converter()
+
+elif pilih.lower() == "penghitung bunga":
+
+    chatbot()
+
+else:
+    print("Basic: Terjadi error, silahkan cobalagi! ")

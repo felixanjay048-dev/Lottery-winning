@@ -1,0 +1,46 @@
+dictionary = {
+    "Place": "Tempat",
+    "Home": "Rumah",
+    "How are you?": "Apa kabar?",
+    "Hello": "Halo",
+    "I'm Good": "Aku baik",
+    "Good morning": "Selamat pagi",
+    "Good night": "Selamat malam",
+    "Good afternoon": "Selamat sore"
+}
+
+choice = input("Basic: Berikan kata-kata dalam bahasa Inggris: ")
+
+if choice in dictionary:
+
+    print("Basic: Ini adalah maknanya: ", dictionary[choice])
+
+else:
+
+    print("Basic: Tidak ada di dalam kamus, silahkan cobalagi!")
+
+
+while True:
+
+    tanya = input("Basic: Penambahan kata-kata baru (Ya / Tidak): ")
+
+
+    if tanya.lower() == "ya":
+
+        kata = input("Basic: Berikan kata baru, dalam bahasa Inggris: ")
+
+        baru = input("Basic: Berikan makna, dari kata tersebut: ")
+        
+        dictionary.update({kata : baru})
+
+        print(f"Basic: Terima kasih, untuk kata baru, saya sangat senang bisa belajar kata-kata baru: {dictionary}")
+    
+    elif tanya.lower() == "tidak":
+
+        print("Basic: Jika tidak ada sekian terima kasih! ")
+
+        break 
+    
+    else:
+
+        print("Basic: Maaf terjadi error, silahkan cobalagi, saya tidak mengerti!")

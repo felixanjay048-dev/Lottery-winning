@@ -1,0 +1,42 @@
+def kalkulator():
+
+    pilih = input("Basic: Pilih salah satu, tambah, kurang, kali, atau bagi: ")
+
+    if pilih.lower() == "kali":
+
+        a = int(input("Basic: Berikan angka awal: "))
+
+        b = int(input("Basic: Berikan angka terakhir: "))
+
+        print(f"Basic: Ini adalah hasilnya {a * b}")
+    
+    elif pilih.lower() == "tambah":
+
+        a = int(input("Basic: Berikan angka awal: "))
+
+        b = int(input("Basic: Berikan angka terakhir: "))
+
+        print(f"Basic: Ini adalah hasilnya: {a + b}")
+
+    
+    elif pilih.lower() == "kurang":
+
+        a = int(input("Basic: Berikan angka awal: "))
+
+        b = int(input("Basic: Berikan angka terakhir: "))
+
+        print(f"Basic: Ini adalah hasilnya: {a - b}")
+
+    elif pilih.lower() == "bagi":
+
+        a = int(input("Basic: Berikan angka awal: "))
+
+        b = int(input("Basic: Berikan angka terakhir: "))
+
+        print(f"Basic: Ini adalah hasilnya: {a / b}")
+
+    else:
+
+        print(f"Basic: Terjadi error, silahkan cobalagi, perintah, tidak ada di dalam list! ")
+
+kalkulator()

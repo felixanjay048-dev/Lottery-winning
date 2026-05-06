@@ -1,0 +1,72 @@
+def chatbot():
+
+    teks = {
+        "hello": "Hello!",
+        "i'm good": "That's a good one!",
+        "who are you?": "I am Basic!",
+        "thank you": "You're welcome!",
+        "thanks": "You're welcome!",
+        "how are you?": "I'm good and you?"
+    }
+
+    choice = input("Basic: Hello, what can i help you? ").lower()
+
+
+    if choice == "hello":
+
+        print(f"Basic: {teks['hello']}")
+
+    elif choice == "how are you?":
+
+        print(f"Basic: {teks['how are you?']}")
+
+        tanya = input("User: I'm doing ").lower()
+        
+        if teks["how are you?"] in tanya:
+
+            print(f"Basic: {teks['how are you?']}")
+
+        elif tanya == "bad" or tanya == "sad":
+        
+            asking = input("Basic: What happened? ")
+
+            print(f"User: Because i feel {asking}")
+
+            print("Basic: Oh no, i feel bad for you.")
+
+        elif tanya == "angry" or tanya == "mad":
+        
+            asking = input("Basic: What happened? ")
+
+            print(f"User: Because i feel {asking}")
+
+            print("Basic: Oh no, don't be mad.")
+
+        else:
+            print("Basic: Sorry i can't understand you! Could you repeat?")
+
+            while True:
+            
+                ask = input("Basic: Is there something you wanna tell, or repeat? (yes / no) ").lower()
+
+                if ask == "yes":
+                
+                    asking = input("Basic: What is it? ")
+
+                    print(f"User: I want to tell you {asking}")
+
+                    break 
+                elif ask == "no":
+                
+                    print("Basic: Okay then, i appreciate that!")
+                    break
+                    
+                else:
+                
+                    print("Basic: Sorry i can't understand you!")
+
+    else:
+    
+        print("Basic: Sorry, I don't recognize that command.")
+
+chatbot()

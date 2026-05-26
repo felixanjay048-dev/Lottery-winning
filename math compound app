@@ -1,0 +1,63 @@
+import tkinter as tk
+
+from tkinter import messagebox, Entry, Button, Canvas
+
+def hitung():
+
+    modal = float(entry_modal.get())
+
+    bunga = float(entry_bunga.get())
+
+    tahun = float(entry_tahun.get())
+
+    total = modal * (1 + bunga / 100) ** tahun
+
+    if total:
+
+        messagebox.showinfo("Success", f"Basic: Here is the total: {round(total)}")
+
+        return total
+
+    else:
+
+        messagebox.showinfo("Failed, and error", "Basic: Please try again! ")
+
+windows = tk.Tk()
+
+windows.geometry("400x400")
+
+canva = Canvas(windows, width=400, height=400, bg="cyan")
+
+canva.create_rectangle(0, 0, 100, 100, outline="blue", fill="blue")
+
+canva.create_rectangle(300, 300, 500, 500, fill="red", outline="red")
+
+canva.create_rectangle(-50, 300, 100, 400, fill="green", outline="green")
+
+canva.create_rectangle(300, 0, 400, 100, outline="yellow", fill="yellow")
+
+canva.pack()
+
+tk.Label(windows, text="Modal Awal", font="Arial", bg="cyan").place(x=155, y=20)
+
+entry_modal = Entry(windows)
+
+entry_modal.place(x=150, y=50)
+
+tk.Label(windows, text="Bunga per tahun", font="Arial", bg="cyan").place(x=139, y=70)
+
+entry_bunga = Entry(windows)
+
+entry_bunga.place(x=150, y=100)
+
+tk.Label(windows, text="Estimasi waktu", font="Arial", bg="cyan").place(x=143, y=120)
+
+entry_tahun = Entry(windows)
+
+entry_tahun.place(x=150, y=150)
+
+button = Button(windows, text="Okay", command=hitung, width=10)
+
+button.place(x=170, y=180)
+        
+windows.mainloop()

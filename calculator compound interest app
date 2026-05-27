@@ -1,0 +1,65 @@
+import tkinter as tk 
+
+from tkinter import Canvas, Entry, messagebox, Button, Label
+
+def calculator():
+
+    modal = int(entry_modal.get())
+
+    bunga = float(entry_bunga.get()) / 100
+
+    tahun_total = int(entry_tahun.get())
+
+    teks_hasil = ""
+    
+    for t in range(1, tahun_total + 1):
+
+        modal = modal * (1 + bunga)
+        
+        angka_rapi = f"{int(modal):,}".replace(",", ".")
+        
+        teks_hasil += f"Basic: Tahun {t} = $ {angka_rapi}\n"
+
+    messagebox.showinfo("Success", teks_hasil)
+
+windows = tk.Tk()
+    
+windows.geometry("400x400")
+
+canva = Canvas(windows, width=400, height=400, bg="red")
+
+canva.create_rectangle(0, 0, 500, 120, fill="green", outline="green")
+
+canva.create_rectangle(0, 260, 400, 500, fill="green", outline="green")
+
+canva.pack()
+
+label = Label(windows, text="Modal", font=("Arial", 20))
+
+label.place(x=160, y=30)
+
+entry_modal = Entry(windows)
+
+entry_modal.place(x=140, y=80)
+
+label2 = Label(windows, text="Bunga", font=("Arial", 20))
+
+label2.place(x=160, y=150)
+
+entry_bunga = Entry(windows)
+
+entry_bunga.place(x=140, y=200)
+
+label3 = Label(windows, text="Estimasi Waktu", font=("Arial", 15))
+
+label3.place(x=130, y=275)
+
+entry_tahun = Entry(windows)
+
+entry_tahun.place(x=140, y=320)
+
+tombol = Button(windows, text="PRESS OKAY", command=calculator)
+
+tombol.place(x=165, y=350)
+
+windows.mainloop()

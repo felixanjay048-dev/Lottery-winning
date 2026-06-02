@@ -1,0 +1,58 @@
+import tkinter as tk
+
+import random
+
+from tkinter import Canvas, messagebox, Button
+
+percobaan = int(3)
+
+def acak():
+
+    global percobaan
+
+    if percobaan <= 0:
+
+        messagebox.showinfo("Gagal", "Basic: Percobaan Anda Habis")
+
+        return  
+    
+    percobaan -= 1
+
+    file = random.randint(10, 100)
+
+    file2 = random.randint(200, 400)
+
+    file3 = random.randint(1000, 2000)
+
+    gabung = (file, file2, file3)
+
+    if gabung == (10, 200, 1000):
+
+        messagebox.showinfo("Berhasil", "Basic: Percobaan Anda Berhasil")
+
+    else:
+
+        messagebox.showinfo("Gagal", f"Basic: Percobaan Anda Gagal\nHasil: {gabung}\nSisa Percobaan: {percobaan}")
+
+windows = tk.Tk()
+
+windows.title("Pengundian")
+
+windows.geometry("1000x1000")
+
+canvas = Canvas(windows, width=1000, height=1000, bg="cyan")
+
+canvas.create_rectangle(50, 50, 950, 950, fill="", outline="navy", width=5)
+
+canvas.pack()
+
+label = tk.Label(windows, text="'SELAMAT DATANG DI PENGUNDIAN'", font=("Times New Roman", 30), bg="cyan")
+
+label.place(x=170, y=390)
+
+button = Button(windows, text="Acak", font=("Times New Roman", 24), command=acak)
+
+button.place(x=450, y=450)
+
+
+windows.mainloop()

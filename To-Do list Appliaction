@@ -1,0 +1,61 @@
+import tkinter as tk 
+
+from tkinter import messagebox, Entry, Button, Label, Listbox, Canvas
+
+def tambah_tugas():
+
+    tugas = entry_tugas.get()
+
+    if tugas != "":
+
+        listbox_tugas.insert(tk.END, tugas)
+
+        entry_tugas.delete(0, tk.END)
+
+    else:
+
+        messagebox.showwarning("Peringatan", "Tugas tidak boleh kosong!")
+
+global listbox_tugas
+
+def hapus_tugas():
+
+    tugas_terpilih = listbox_tugas.curselection()
+
+    if tugas_terpilih != ():
+
+        listbox_tugas.delete(tugas_terpilih)
+
+windows = tk.Tk()
+
+windows.geometry("400x400")
+
+canva = Canvas(windows, width=400, height=400)
+
+canva.create_rectangle(0, 0, 400, 400, fill="OliveDrab", outline="OliveDrab")
+
+canva.create_rectangle(20, 20, 380, 380, fill="LightGreen", outline="Gray")
+
+canva.pack()
+
+label_judul = Label(windows, text="APLIKASI TO-DO LIST", font=("Times New Roman", 16), bg="LightGreen")
+
+label_judul.place(x=84, y=30)
+
+entry_tugas = Entry(windows)
+
+entry_tugas.place(x=125, y=60)
+
+listbox_tugas = Listbox(windows)
+
+listbox_tugas.place(x=125, y=125)
+
+tombol_tambah = Button(windows, text="Tambah Tugas", command=tambah_tugas, font=("Times New Roman", 10))
+
+tombol_tambah.place(x=100, y=90)
+
+tombol_hapus = Button(windows, text="Hapus Tugas", command=hapus_tugas, font=("Times New Roman", 10))
+
+tombol_hapus.place(x=200, y=90)
+
+windows.mainloop()

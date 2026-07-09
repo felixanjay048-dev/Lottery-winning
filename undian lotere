@@ -1,0 +1,59 @@
+import tkinter as tk 
+import random
+from tkinter import Canvas, Label, messagebox, Button
+
+percobaan = 3
+
+def acak():
+    global percobaan 
+
+    if percobaan <= 0:
+        messagebox.showerror("Habis!", "Kesempatan Anda sudah habis!")
+        return
+
+    percobaan -= 1
+    label_petunjuk.config(text=f"Sisa Percobaan Anda: {percobaan}")
+
+    angka_acak_pertama = random.randint(1, 100)
+    angka_acak_kedua = random.randint(20, 500)
+    angka_acak_ketiga = random.randint(300, 800)
+    teks_angka = f"{angka_acak_pertama}, {angka_acak_kedua}, {angka_acak_ketiga}"
+
+    if angka_acak_pertama == 50:
+
+        label_hasil.config(text=f"Angka Undian: {teks_angka}", fg="green")
+        messagebox.showinfo("Selamat!", f"Anda MENANG! Mendapatkan angka keberuntungan 50!")
+        tombol_acak.config(state="disabled") 
+        
+    else:
+
+        label_hasil.config(text=f"Angka Saat Ini: {teks_angka}", fg="blue")
+
+        if percobaan == 0:
+
+            messagebox.showwarning("Game Over", "Maaf, percobaan Anda sudah berakhir!")
+            tombol_acak.config(state="disabled") 
+
+        else:
+
+            messagebox.showwarning("Info", f"Maaf, Anda kurang beruntung! Sisa percobaan: {percobaan}")
+
+windows = tk.Tk()
+windows.title("Aplikasi Undian")
+windows.geometry("400x400")
+
+canva = Canvas(windows, background="LightBlue", height=100, width=380)
+canva.pack(pady=10)
+
+label_petunjuk = Label(windows, text=f"Sisa Percobaan Anda: {percobaan}", font=("Arial", 12))
+label_petunjuk.pack(pady=10)
+
+label_hasil = Label(windows, text="Belum ada angka", font=("Arial", 14, "bold"), fg="blue")
+label_hasil.pack(pady=10)
+
+tombol_acak = Button(windows, text="ACAK", command=acak, font=("Arial", 12, "bold"), bg="white")
+tombol_acak.pack(pady=10)
+
+windows.mainloop()
+
+

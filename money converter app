@@ -1,0 +1,56 @@
+import tkinter as tk 
+from tkinter import messagebox, Label, Entry, Button, Canvas
+
+def kurs():
+
+    pilihan = entry_pilihan.get().lower()
+    jumlah_tks = entry_money.get()
+
+    if jumlah_tks == "":
+
+        messagebox.showinfo("Gagal", "Basic: Jumlah uang tidak boleh kosong!")
+    
+    elif pilihan == "euro to idr":
+
+        idr = float(jumlah_tks)
+        hasil = idr * 21000
+        label_result.config(text=f"Basic IDR: Rp {hasil:,.2f}")
+
+    elif pilihan == "usd to idr":
+
+        idr = float(jumlah_tks)
+        hasil = idr * 18000 
+        label_result.config(text=f"Basic IDR: Rp {hasil:,.2f}")
+
+    else:
+
+        messagebox.showinfo("Gagal", "Basic: Silakan pilih mata uang terlebih dahulu!")
+
+windows = tk.Tk()
+windows.geometry("300x300")
+
+
+label_pilih = Label(windows, text="Ketik Pilihan (USD TO IDR / EURO TO IDR): ")
+label_pilih.pack()
+
+entry_pilihan = Entry(windows)
+entry_pilihan.pack()
+
+label_jumlah = Label(windows, text="Masukkan Jumlah Uang (ANGKA): ")
+label_jumlah.pack()
+
+entry_money = Entry(windows)
+entry_money.pack()
+
+tombol = Button(windows, text="OK", command=kurs)
+tombol.pack()
+
+canva = Canvas(windows, width=400, height=400)
+canva.create_rectangle(0, 0, 200, 200, fill="orange", outline="orange")
+canva.create_rectangle(0, 0, 350, 10, fill="green", outline="green")
+canva.pack()
+
+label_result = Label(windows, text="Hasil IDR: -", font=("Times New Roman", 12, "bold"))
+label_result.pack()
+
+windows.mainloop()

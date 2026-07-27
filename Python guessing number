@@ -1,0 +1,59 @@
+import random
+import tkinter as tk
+from tkinter import Button, Canvas, Entry, Label, messagebox
+
+nyawa = 3
+angka_acak = random.randint(1, 10)
+
+
+def acak():
+  global nyawa, angka_acak  
+
+  tebakan = int(entry_angka.get())
+  nyawa -= 1  
+
+  if tebakan < angka_acak:
+    if nyawa > 0:
+      messagebox.showinfo(
+          "Gagal", f"Basic: Terlalu rendah! Sisa percobaan: {nyawa}"
+      )
+    else:
+      messagebox.showerror("Game Over", f"Basic: Kalah! Angkanya adalah {angka_acak}")
+      windows.destroy()  
+
+  elif tebakan > angka_acak:
+    if nyawa > 0:
+      messagebox.showinfo(
+          "Gagal", f"Terlalu tinggi! Sisa percobaan: {nyawa}"
+      )
+    else:
+      messagebox.showerror("Game Over", f"Basic: Kalah! Angkanya adalah {angka_acak}")
+      windows.destroy()
+
+  else:
+    messagebox.showinfo("Sukses", "Basic: Anda berhasil!")
+    windows.destroy()  
+
+
+
+windows = tk.Tk()
+windows.geometry("400x400")
+
+canva = Canvas(windows, width=400, height=400)
+canva.create_rectangle(0, 0, 400, 150, fill="green", outline="green")
+canva.create_rectangle(0, 150, 400, 300, fill="chocolate", outline="chocolate")
+canva.create_rectangle(0, 300, 400, 500, fill="Olive", outline="olive")
+canva.pack()
+
+label = Label(
+    windows, text="TEBAK ANGKA", font=("Times New Roman", 20), bg="green", fg="white"
+)
+label.place(x=110, y=110)
+
+entry_angka = Entry(windows)
+entry_angka.place(x=145, y=170)
+
+tombol = Button(windows, text="OK", command=acak)
+tombol.place(x=195, y=200)
+
+windows.mainloop()

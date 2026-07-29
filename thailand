@@ -1,0 +1,14 @@
+import tkinter as tk
+from tkinter import Canvas
+
+windows = tk.Tk()
+windows.title("Bendera Thailand")
+windows.geometry("450x300")
+
+canva = Canvas(windows, width=450, height=300, bg="white")
+canva.create_rectangle(0, 0, 450, 50, fill="red", outline="red")
+canva.create_rectangle(0, 100, 450, 200, fill="navy", outline="navy")
+canva.create_rectangle(0, 250, 450, 300, fill="red", outline="red")
+canva.pack()
+
+windows.mainloop()

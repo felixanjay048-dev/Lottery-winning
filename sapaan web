@@ -1,0 +1,27 @@
+import tkinter as tk
+from tkinter import Label, Entry, Button, Canvas
+
+def sapaan():
+    nama = entry_nama.get()
+
+    canva.itemconfig(id_pesan, text=f"Halo, {nama}! Selamat datang di program ini.")
+
+windows = tk.Tk()
+windows.geometry("400x400")
+
+canva = Canvas(windows, width=400, height=400)
+canva.create_rectangle(0, 0, 200, 400, fill="Navy", outline="Navy")
+canva.create_rectangle(200, 0, 400, 400, fill="cyan", outline="cyan")
+canva.pack()
+
+canva.create_text(200, 70, text="Masukkan nama Anda:", font=("Times New Roman", 20), fill="peachpuff")
+
+entry_nama = Entry(windows)
+canva.create_window(200, 110, window=entry_nama)
+
+tombol = Button(windows, text="NAMA SAYA", command=sapaan)
+canva.create_window(200, 160, window=tombol)
+
+id_pesan = canva.create_text(200, 220, text="", font=("Times New Roman", 12), fill="beigedadadadadadad")
+
+windows.mainloop()

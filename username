@@ -1,0 +1,50 @@
+import tkinter as tk 
+from tkinter import messagebox, Entry, Button, Label, Canvas
+
+users = {
+    "felix": "12345"
+}
+
+def login():
+
+    username = entry_username.get()
+    password = entry_password.get()
+
+    if username in users:
+        if users[username] == password:
+            messagebox.showinfo("Login Successful", f"Basic: Welcome, {username}!")
+        else:
+            messagebox.showerror("Login Failed", "Basic: Incorrect password.")
+    else:
+        messagebox.showerror("Login Failed", "Basic: Username not found.")
+
+windows = tk.Tk()
+windows.geometry("400x400")
+
+canva = Canvas(windows, width=400, height=400)
+canva.create_rectangle(0, 0, 200, 400, fill="lightblue", outline="lightblue")
+canva.create_rectangle(200, 0, 400, 400, fill="lightgreen", outline="lightgreen")
+canva.pack()
+
+label_username = Label(windows, text="User", font=("Times New Roman", 12), bg="lightblue")
+label_username.place(x=175, y=55)
+
+label_username2 = Label(windows, text="name:", font=("Times New Roman", 12), bg="lightgreen")
+label_username2.place(x=210, y=55)
+
+entry_username = Entry(windows)
+entry_username.place(x=150, y=80)
+
+label_password = Label(windows, text="Pass", font=("Times New Roman", 12), bg="lightblue")
+label_password.place(x=175, y=105)
+
+label_password2 = Label(windows, text="word:", font=("Times New Roman", 12), bg="lightgreen")
+label_password2.place(x=210, y=105)
+
+entry_password = Entry(windows, show="*")
+entry_password.place(x=150, y=130)
+
+button = Button(windows, text="LOGIN", command=login)
+button.place(x=185, y=160)
+
+windows.mainloop()
